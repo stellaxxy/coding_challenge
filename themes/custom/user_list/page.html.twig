@@ -52,30 +52,30 @@
 
 <div class="main-container">
 
-  <main role="main">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    <main role="main">
+        <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-    <div class="sort-container">
-      <div class="sort-dropdown">
-        <div class="drop-trigger">SORT  <span>&#187;</span></div>
-        <div class="dropdown-content">
-          <div class="drop-first-op">By Last Name</div>
-          <div class="drop-second-op">By Time Added</div>
+        <div class="sort-container">
+            <div class="sort-dropdown">
+                <div class="drop-trigger">SORT  <span>&#187;</span></div>
+                <div class="dropdown-content">
+                    <div class="drop-first-op">By Last Name</div>
+                    <div class="drop-second-op">By Time Added</div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <div class="layout-content">
-      {{ page.content }}
-    </div>{# /.layout-content #}
+        <div class="layout-content">
+            {{ page.content }}
+        </div>{# /.layout-content #}
 
-    {% if page.sidebar %}
-      <aside class="layout-sidebar-first" role="complementary">
-        {{ page.sidebar }}
-      </aside>
-    {% endif %}
+        {% if page.sidebar %}
+            <aside class="layout-sidebar-first" role="complementary">
+                {{ page.sidebar }}
+            </aside>
+        {% endif %}
 
 
-  </main>
+    </main>
 
 </div>{# /.layout-container #}

@@ -30,9 +30,9 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes }}>
+      <ul{{ attributes.addClass('login-ul') }}>
     {% else %}
-      <ul>
+      <ul class="login-ul">
     {% endif %}
     {% for item in items %}
       <li{{ item.attributes }}>
