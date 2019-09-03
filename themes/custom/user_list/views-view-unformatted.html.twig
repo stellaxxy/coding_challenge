@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+{#{{ kint(rows[0].content['#row']._entity.field_picture) }}#}
+{% for row in rows %}
+  {%
+    set row_classes = [
+      default_row_class ? 'views-row'~' card-inner',
+    ]
+
+  %}
+    {%
+        set card_class = 'card '~row.content['#row']._entity.field_last_name[0].value|first|lower
+    %}
+  <div {{ attributes.removeAttribute('class').addClass(card_class) }}>
+    <div{{ row.attributes.addClass(row_classes) }}>
+      <div class="full-name card-front" data-phone="{{ row.content['#row']._entity.field_phone[0].value }}">
+        <div class="picture">
+          {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_picture }}'] }}
+        </div>
+        <span class="name">{{ row.content['#row']._entity.field_first_name[0].value~' '~row.content['#row']._entity.field_last_name[0].value }}</span>
+      </div>
+      <div class="card-back">{{ row.content['#row']._entity.field_email[0].value }}</div>
+    </div>
+  </div>
+
+{% endfor %}

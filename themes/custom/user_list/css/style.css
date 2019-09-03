@@ -1,0 +1,225 @@
+body {
+    box-sizing: border-box;
+    font-family: 'Lexend Zetta', sans-serif;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+.header {
+    position: relative;
+    height: 25px;
+    margin: 40px 0 30px 0;
+    padding: 0 10px;
+}
+
+.top-branding {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.main-container {
+    padding: 0 10px;
+    position: relative;
+}
+
+.main-title {
+    display: inline-block;
+    transform: rotate(-90deg);
+    vertical-align: top;
+    position: relative;
+    right: 87px;
+    top: 76px;
+}
+
+.main-content {
+    display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    width: 85%;
+    right: 20px;
+}
+
+.main-title h1 {
+    font-size: 20px;
+    display: inline-block;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.side-underline {
+    display: inline-block;
+    width: 120px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.side-underline div {
+    width: 100%;
+    height: 10px;
+    border-top: 1px solid black;
+    position: relative;
+    top: 50%;
+}
+
+.layout-sidebar-first {
+    position: fixed;
+    top: 45px;
+}
+
+.tooltip-text {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    z-index: 1;
+    position: absolute;
+    bottom: -13%;
+    left: 28%;
+    width: 145px;
+    letter-spacing: 1px;
+}
+
+.views-row {
+    box-shadow: 0px 0px 4px darkgray, 3px 4px 4px darkgray;
+}
+
+.full-name {
+    position: relative;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.name {
+    position: relative;
+    display: inline-block;
+    width: 75%;
+    transform: translateY(-50%);
+}
+
+.rows-container {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.alpha-container {
+    display: inline-block;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.alpha-container h3 {
+    font-weight: 800;
+}
+
+.card-inner {
+    height: 100%;
+    width: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+}
+
+.rotate-card {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    backface-visibility: hidden;
+}
+
+.hide-front {
+    visibility: hidden;
+}
+
+.card {
+    width: 220px;
+    height: 50px;
+    background-color: transparent;
+    perspective: 1000px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.card-back {
+    transform: rotateY(180deg) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+
+.picture {
+    display: inline-block;
+    width: 20%;
+    height: 80%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.picture img {
+    height: 100%;
+    width: 100%;
+}
+
+.top {
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+}
+
+
+@media only screen and (min-width: 768px){
+    .header {
+        padding: 0 60px;
+    }
+
+    .top {
+        right: 60px;
+    }
+
+    .main-container {
+        padding: 0 60px;
+    }
+
+    .main-content {
+        width: 75%;
+        right: 60px;
+    }
+
+    .top-underline {
+        display: inline-block;
+        width: 300px;
+        height: 15px;
+        vertical-align: middle;
+    }
+
+    .top-underline div {
+        width: 100%;
+        height: 10px;
+        border-top: 1px solid black;
+        position: relative;
+        top: 50%;
+    }
+}
+
+@media only screen and (min-width: 920px){
+    .main-content {
+        right: 100px;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .main-content {
+        width: 84%;
+        right: 95px;
+    }
+}

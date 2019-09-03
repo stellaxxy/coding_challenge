@@ -1,0 +1,12 @@
+name: userList
+description: User List Theme
+type: theme
+core: 8.x
+libraries:
+  - user_list/global-css
+  - user_list/global-js
+regions:
+  content: 'Main Content'
+  header: 'Header'
+  sidebar: 'Sidebar'
+
