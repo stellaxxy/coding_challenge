@@ -106,7 +106,7 @@ body {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 
 }
 
@@ -146,7 +146,7 @@ body {
     background-color: transparent;
     perspective: 1000px;
     position: relative;
-    margin-bottom: 10px;
+    margin: 10px;
 }
 
 .card-back {
@@ -176,6 +176,52 @@ body {
     right: 10px;
 }
 
+.sort-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: #f1f1f1;
+    z-index: 1;
+    padding: 8px;
+    border-radius: 10px;
+    right: -15%;
+    text-align: left;
+    display: none;
+}
+
+.dropdown-content div {
+    font-size: 14px;
+    padding: 3px;
+}
+
+.drop-first-op {
+    margin-bottom: 9px;
+}
+
+.sort-container {
+    height: 45px;
+    text-align: right;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.dropdown-content div:hover {
+    background-color: #ddd;
+}
+
+.sort-dropdown:hover .dropdown-content {
+    display: inline-block;
+}
+
+.card,
+.dropdown-content,
+.drop-trigger {
+    cursor: pointer;
+}
 
 @media only screen and (min-width: 768px){
     .header {
@@ -208,6 +254,15 @@ body {
         border-top: 1px solid black;
         position: relative;
         top: 50%;
+    }
+
+    .sort-container {
+        padding-left: 65px;
+        padding-right: 65px;
+    }
+
+    .dropdown-content {
+        right: -36%;
     }
 }
 

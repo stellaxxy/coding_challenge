@@ -1,9 +1,15 @@
 
 (function($){
+    let originalArr = [];
+
     $(document).ready(
+
         $('.full-name').hover(tooltipHandlerIn, tooltipHandlerOut),
         $('.card-inner').click(flipCard),
-        arrangeAlphabetically()
+        saveOriginalArr(),
+        $('.drop-first-op').click(arrangeAlphabetically),
+        $('.drop-second-op').click(sortByTime),
+        arrangeAlphabetically(),
     )
 
     function tooltipHandlerIn(){
@@ -31,6 +37,7 @@
                 }
             }
         }
+        $('.rows-container').css('justify-content', 'center');
     }
 
     function flipCard(){
@@ -38,5 +45,18 @@
         setTimeout(()=>{$(this).find($('.card-front')).toggleClass('hide-front')}, 200);
     }
 
+    function saveOriginalArr(){
+        let allCards = $('.card');
+        originalArr = allCards;
+    }
 
+    function sortByTime(){
+        $('.alpha-container').remove();
+        for(let index = 0; index < originalArr.length; index++){
+            $('.rows-container').append(originalArr[index]);
+        }
+        $('.rows-container').css('justify-content', 'stretch');
+        $('.full-name').hover(tooltipHandlerIn, tooltipHandlerOut);
+        $('.card-inner').click(flipCard)
+    }
 })(jQuery);
